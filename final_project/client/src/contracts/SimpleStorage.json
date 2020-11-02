@@ -2,7 +2,6 @@
   "contractName": "SimpleStorage",
   "abi": [
     {
-      "constant": false,
       "inputs": [
         {
           "internalType": "uint256",
@@ -12,12 +11,10 @@
       ],
       "name": "set",
       "outputs": [],
-      "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     },
     {
-      "constant": true,
       "inputs": [],
       "name": "get",
       "outputs": [
@@ -27,26 +24,27 @@
           "type": "uint256"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/simonp/Documents/BC/final_project/contracts/SimpleStorage.sol\":\"SimpleStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/simonp/Documents/BC/final_project/contracts/SimpleStorage.sol\":{\"keccak256\":\"0x512df1603c5f878921707d236bc53d974afe05b4d9de4b6094249bac5ab60efe\",\"urls\":[\"bzz-raw://0d6de97971b1c387f984fa7ea1d9ec10f8a63d68cc63bf8bd00d8c3a7c9e3ee1\",\"dweb:/ipfs/Qmbt92T34sHzedfJjDsvbisvLhRtghNwS6VW8tqrGkrqTD\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060c68061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea265627a7a7231582018135875bab88358872ebe78e8ecc2ce09bf67b8f01002539c241b5969d8adc564736f6c63430005100032",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea265627a7a7231582018135875bab88358872ebe78e8ecc2ce09bf67b8f01002539c241b5969d8adc564736f6c63430005100032",
-  "sourceMap": "66:176:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:176:1;;;;;;;",
-  "deployedSourceMap": "66:176:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:176:1;;;;;;;;;;;;;;;;;;;;;;;;113:53;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;113:53:1;;;;;;;;;;;;;;;;;:::i;:::-;;170:70;;;:::i;:::-;;;;;;;;;;;;;;;;;;;113:53;160:1;147:10;:14;;;;113:53;:::o;170:70::-;206:4;225:10;;218:17;;170:70;:::o",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"get\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"}],\"name\":\"set\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/simon/Documents/BC/final_project/contracts/SimpleStorage.sol\":\"SimpleStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/simon/Documents/BC/final_project/contracts/SimpleStorage.sol\":{\"keccak256\":\"0x512df1603c5f878921707d236bc53d974afe05b4d9de4b6094249bac5ab60efe\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0d6de97971b1c387f984fa7ea1d9ec10f8a63d68cc63bf8bd00d8c3a7c9e3ee1\",\"dweb:/ipfs/Qmbt92T34sHzedfJjDsvbisvLhRtghNwS6VW8tqrGkrqTD\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060c78061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea26469706673582212200f0992debde2eb2610c7856edb4bf94b12541d36e693a5d85da051c594b249a564736f6c634300060c0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806360fe47b11460375780636d4ce63c146062575b600080fd5b606060048036036020811015604b57600080fd5b8101908080359060200190929190505050607e565b005b60686088565b6040518082815260200191505060405180910390f35b8060008190555050565b6000805490509056fea26469706673582212200f0992debde2eb2610c7856edb4bf94b12541d36e693a5d85da051c594b249a564736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "66:176:1:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "66:176:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;113:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;170:70;;;:::i;:::-;;;;;;;;;;;;;;;;;;;113:53;160:1;147:10;:14;;;;113:53;:::o;170:70::-;206:4;225:10;;218:17;;170:70;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21 <0.7.0;\n\ncontract SimpleStorage {\n  uint storedData;\n\n  function set(uint x) public {\n    storedData = x;\n  }\n\n  function get() public view returns (uint) {\n    return storedData;\n  }\n}\n",
-  "sourcePath": "/home/simonp/Documents/BC/final_project/contracts/SimpleStorage.sol",
+  "sourcePath": "/home/simon/Documents/BC/final_project/contracts/SimpleStorage.sol",
   "ast": {
-    "absolutePath": "/home/simonp/Documents/BC/final_project/contracts/SimpleStorage.sol",
+    "absolutePath": "/home/simon/Documents/BC/final_project/contracts/SimpleStorage.sol",
     "exportedSymbols": {
       "SimpleStorage": [
         59
       ]
     },
     "id": 60,
+    "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -64,6 +62,7 @@
         "src": "32:32:1"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
@@ -79,8 +78,10 @@
           {
             "constant": false,
             "id": 40,
+            "mutability": "mutable",
             "name": "storedData",
             "nodeType": "VariableDeclaration",
+            "overrides": null,
             "scope": 59,
             "src": "93:15:1",
             "stateVariable": true,
@@ -157,12 +158,14 @@
               ]
             },
             "documentation": null,
+            "functionSelector": "60fe47b1",
             "id": 50,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "set",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
               "id": 43,
               "nodeType": "ParameterList",
@@ -170,8 +173,10 @@
                 {
                   "constant": false,
                   "id": 42,
+                  "mutability": "mutable",
                   "name": "x",
                   "nodeType": "VariableDeclaration",
+                  "overrides": null,
                   "scope": 50,
                   "src": "126:6:1",
                   "stateVariable": false,
@@ -205,7 +210,7 @@
             "scope": 59,
             "src": "113:53:1",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           },
           {
@@ -236,12 +241,14 @@
               ]
             },
             "documentation": null,
+            "functionSelector": "6d4ce63c",
             "id": 58,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "get",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
               "id": 51,
               "nodeType": "ParameterList",
@@ -255,8 +262,10 @@
                 {
                   "constant": false,
                   "id": 53,
+                  "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
+                  "overrides": null,
                   "scope": 58,
                   "src": "206:4:1",
                   "stateVariable": false,
@@ -284,7 +293,7 @@
             "scope": 59,
             "src": "170:70:1",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           }
         ],
@@ -295,13 +304,14 @@
     "src": "32:211:1"
   },
   "legacyAST": {
-    "absolutePath": "/home/simonp/Documents/BC/final_project/contracts/SimpleStorage.sol",
+    "absolutePath": "/home/simon/Documents/BC/final_project/contracts/SimpleStorage.sol",
     "exportedSymbols": {
       "SimpleStorage": [
         59
       ]
     },
     "id": 60,
+    "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -319,6 +329,7 @@
         "src": "32:32:1"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "contract",
@@ -334,8 +345,10 @@
           {
             "constant": false,
             "id": 40,
+            "mutability": "mutable",
             "name": "storedData",
             "nodeType": "VariableDeclaration",
+            "overrides": null,
             "scope": 59,
             "src": "93:15:1",
             "stateVariable": true,
@@ -412,12 +425,14 @@
               ]
             },
             "documentation": null,
+            "functionSelector": "60fe47b1",
             "id": 50,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "set",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
               "id": 43,
               "nodeType": "ParameterList",
@@ -425,8 +440,10 @@
                 {
                   "constant": false,
                   "id": 42,
+                  "mutability": "mutable",
                   "name": "x",
                   "nodeType": "VariableDeclaration",
+                  "overrides": null,
                   "scope": 50,
                   "src": "126:6:1",
                   "stateVariable": false,
@@ -460,7 +477,7 @@
             "scope": 59,
             "src": "113:53:1",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           },
           {
@@ -491,12 +508,14 @@
               ]
             },
             "documentation": null,
+            "functionSelector": "6d4ce63c",
             "id": 58,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "get",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
               "id": 51,
               "nodeType": "ParameterList",
@@ -510,8 +529,10 @@
                 {
                   "constant": false,
                   "id": 53,
+                  "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
+                  "overrides": null,
                   "scope": 58,
                   "src": "206:4:1",
                   "stateVariable": false,
@@ -539,7 +560,7 @@
             "scope": 59,
             "src": "170:70:1",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "public"
           }
         ],
@@ -551,7 +572,7 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {
     "1601874170399": {
@@ -561,13 +582,16 @@
       "transactionHash": "0x6f8231aac72f6d6a0959be03babd1fdc1fd927a9b97216a52ffa1d4d01e6dd88"
     }
   },
-  "schemaVersion": "3.2.4",
-  "updatedAt": "2020-10-05T05:15:05.000Z",
-  "networkType": "ethereum",
+  "schemaVersion": "3.3.1",
+  "updatedAt": "2020-10-26T05:37:17.275Z",
   "devdoc": {
-    "methods": {}
+    "kind": "dev",
+    "methods": {},
+    "version": 1
   },
   "userdoc": {
-    "methods": {}
+    "kind": "user",
+    "methods": {},
+    "version": 1
   }
 }

@@ -10,5 +10,11 @@ module.exports = {
       port: "8545",
       network_id: "*"
     }
+  },
+  compilers: {
+    solc: {
+      version: ">=0.4.21 <0.7.0", // A version or constraint - Ex. "^0.5.0"
+                         // Can also be set to "native" to use a native solc
+    }
   }
 };
