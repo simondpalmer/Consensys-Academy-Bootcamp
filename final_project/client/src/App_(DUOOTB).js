@@ -72,7 +72,7 @@ class App extends Component {
 
   captureFile = (event) => {
     event.preventDefault()
-    // Process file for IPFS...
+    // Process file for IPFS.
     const file = event.target.files[0]
     const reader = new window.FileReader()
     reader.readAsArrayBuffer(file)
@@ -116,8 +116,6 @@ class App extends Component {
                   const sketch = this.sketch.value
                   this.mint(sketch)
                 }}>
-                  <input type='file' onChange={this.captureFile} />
-                  <input type='submit' />
                   <input
                     type='text'
                     className='form-control mb-1'
