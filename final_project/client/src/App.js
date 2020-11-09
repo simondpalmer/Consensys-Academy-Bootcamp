@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MetaMaskButton } from "rimble-ui";
 import Web3 from 'web3'
 import './App.css';
 import ipfs from './ipfs'
@@ -32,6 +33,7 @@ class App extends Component {
 
     const networkId = await web3.eth.net.getId()
     const networkData = Sketch.networks[networkId]
+    console.log(networkData)
     if(networkData) {
       const abi = Sketch.abi
       const address = networkData.address
@@ -81,9 +83,19 @@ class App extends Component {
     }
   }
 
+  //QmU5eQ66pWzCAKGCWwRdM33nXK99aX9k9rYRGGhmAw552n
+  // Example url: https://ipfs.infura.io/ipfs/QmU5eQ66pWzCAKGCWwRdM33nXK99aX9k9rYRGGhmAw552n
   onSubmit = (event) => {
     event.preventDefault()
     console.log("Submitting the sketch...")
+    ipfs.files.add(this.state.buffer, (error, result) => {
+      console.log('Ipfs result', result)
+      const sketch = result[0].hash
+      this.mint(sketch)
+      if(error)
+        console.error(error)
+        return
+    })
   }
 
 
@@ -94,13 +106,13 @@ class App extends Component {
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
             target="_blank"
             rel="noopener noreferrer"
           >
             Sketchs
           </a>
           <ul className="navbar-nav px-3">
+          <MetaMaskButton>Connect with MetaMask</MetaMaskButton> 
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
               <small className="text-white"><span id="account">{this.state.account}</span></small>
             </li>
@@ -110,24 +122,11 @@ class App extends Component {
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
-                <h1>Issue Token</h1>
-                <form onSubmit={(event) => {
-                  event.preventDefault()
-                  const sketch = this.sketch.value
-                  this.mint(sketch)
-                }}>
+                <h1>Submit Sketch For Review</h1>
+                <form onSubmit={this.onSubmit}>                  
                   <input type='file' onChange={this.captureFile} />
-                  <input type='submit' />
-                  <input
-                    type='text'
-                    className='form-control mb-1'
-                    placeholder='e.g. #FFFFFF'
-                    ref={(input) => { this.sketch = input }}
-                  />
-                  <input
-                    type='submit'
-                    className='btn btn-block btn-primary'
-                    value='MINT'
+                  <input type='submit'
+                  ref={(input) => { this.sketch = input }}
                   />
                 </form>
               </div>
@@ -138,7 +137,9 @@ class App extends Component {
             { this.state.sketchs.map((sketch, key) => {
               return(
                 <div key={key} className="col-md-3 mb-3">
-                  <div className="token" style={{ backgroundColor: sketch }}></div>
+                  <div className="token"> 
+                    <img src={ 'https://ipfs.infura.io/ipfs/' + sketch }></img>
+                  </div>
                   <div>{sketch}</div>
                 </div>
               )
