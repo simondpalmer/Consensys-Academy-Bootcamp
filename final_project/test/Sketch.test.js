@@ -33,8 +33,8 @@ contract('Sketch', (accounts) => {
     })
 
     describe('minting', async () => {
-        it('creates a new token', async () => {
-            const result = await contract.mint('#EC058E')
+        it('creates a new sketch token', async () => {
+            const result = await contract.mint('QmU5eQ66pWzCAKGCWwRdM33nXK99aX9k9rYRGGhmAw552n')
             const totalSupply = await contract.totalSupply()
             // SUCCESS
             assert.equal(totalSupply, 1)
@@ -44,15 +44,15 @@ contract('Sketch', (accounts) => {
             assert.equal(event.to, accounts[0], 'to is correct')
       
             // FAILURE: cannot mint same color twice
-            await contract.mint('#EC058E').should.be.rejected;
+            await contract.mint('QmU5eQ66pWzCAKGCWwRdM33nXK99aX9k9rYRGGhmAw552n').should.be.rejected;
           })
         })
     describe('indexing', async () => {
         it('lists colors', async () => {
             // Mint 3 more tokens
-            await contract.mint('#5386E4')
-            await contract.mint('#FFFFFF')
-            await contract.mint('#000000')
+            await contract.mint('QmZ7pbi8hw7DMfNsH5LPSZbQPYrrs38VCt6kSxY5UG2we2')
+            await contract.mint('QmZxz8piv6QcYWHVgr4UBGeoT4Q4nTzWTNx5AAGaT5rF4U')
+            await contract.mint('QmdMuGrMCfvgwg7F6WM8CHev9PJxQ2n3f49ttSGuYfK4Qp')
             const totalSupply = await contract.totalSupply()
         
             let sketch
@@ -63,7 +63,7 @@ contract('Sketch', (accounts) => {
             result.push(sketch)
             }
         
-            let expected = ['#EC058E', '#5386E4', '#FFFFFF', '#000000']
+            let expected = ['QmU5eQ66pWzCAKGCWwRdM33nXK99aX9k9rYRGGhmAw552n', 'QmZ7pbi8hw7DMfNsH5LPSZbQPYrrs38VCt6kSxY5UG2we2', 'QmZxz8piv6QcYWHVgr4UBGeoT4Q4nTzWTNx5AAGaT5rF4U', 'QmdMuGrMCfvgwg7F6WM8CHev9PJxQ2n3f49ttSGuYfK4Qp']
             assert.equal(result.join(','), expected.join(','))
         })
     })

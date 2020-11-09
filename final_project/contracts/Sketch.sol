@@ -9,7 +9,7 @@ contract Sketch is ERC721 {
   constructor() ERC721("Sketch", "SKETCH") public {
   }
 
-  // E.G. sketch ipfs hash = "#FFFFFF"
+  // E.G. sketch ipfs hash = "QmdMuGrMCfvgwg7F6WM8CHev9PJxQ2n3f49ttSGuYfK4Qp"
   function mint(string memory _sketch) public {
     require(!_sketchExists[_sketch]);
     sketchs.push(_sketch);

@@ -60,6 +60,7 @@ class App extends Component {
       })
     })
   }
+  
 
   constructor(props) {
     super(props)
@@ -98,6 +99,46 @@ class App extends Component {
     })
   }
 
+  runMetamask = (event) => {
+    let currentAccount = null;
+window.ethereum
+  .request({ method: 'eth_accounts' })
+  .then(handleAccountsChanged)
+  .catch((err) => {
+    // Some unexpected error.
+    // For backwards compatibility reasons, if no accounts are available,
+    // eth_accounts will return an empty array.
+    console.error(err);
+  });
+    document.getElementById('connectButton', connect);
+    window.ethereum.on('accountsChanged', handleAccountsChanged);
+
+// For now, 'eth_accounts' will continue to always return an array
+function handleAccountsChanged(accounts) {
+  if (accounts.length === 0) {
+    // MetaMask is locked or the user has not connected any accounts
+    console.log('Please connect to MetaMask.');
+  } else if (accounts[0] !== currentAccount) {
+    currentAccount = accounts[0];
+    // Do any other work!
+  }
+}
+    function connect() {
+      window.ethereum
+        .request({ method: 'eth_requestAccounts' })
+        .then(handleAccountsChanged)
+        .catch((err) => {
+          if (err.code === 4001) {
+            // EIP-1193 userRejectedRequest error
+            // If this happens, the user rejected the connection request.
+            console.log('Please connect to MetaMask.');
+          } else {
+            console.error(err);
+          }
+        });
+    }
+}
+
 
 
   render() {
@@ -112,7 +153,9 @@ class App extends Component {
             Sketchs
           </a>
           <ul className="navbar-nav px-3">
-          <MetaMaskButton>Connect with MetaMask</MetaMaskButton> 
+          <MetaMaskButton onClick={this.runMetamask}>
+            Connect with MetaMask
+            </MetaMaskButton>
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
               <small className="text-white"><span id="account">{this.state.account}</span></small>
             </li>
