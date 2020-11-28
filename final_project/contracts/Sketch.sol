@@ -7,10 +7,12 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 /// @notice This contract inherits from the ERC721 standard
 /// @dev All function calls are currenlty implemented without side effects
 contract Sketch is ERC721{
+  address payable private admin;
   string[] public sketchs;
   mapping(string => bool) _sketchExists;
 
   constructor() ERC721("Sketch", "SKETCH") public {
+    admin = msg.sender;
   }
 
   /// @notice mints the ipfs hash passed from the console
@@ -28,6 +30,11 @@ contract Sketch is ERC721{
   function transfersketch(address _to, uint _id) public {
       safeTransferFrom(msg.sender, _to, _id);
   }
+
+  /// @notice way to wipe clean contract
+  function close() public { 
+    selfdestruct(admin);
+    }
 }
 
 

@@ -2,6 +2,8 @@
 A Dapp that allows architects and designers alike to upload designs onto ipfs. These are tokenized in the process onto the blockchain.
 Dependant on the user the Dapp shows all of the sketchs that have been uploaded by that user. 
 
+Watch the [demo](https://drive.google.com/file/d/1SdYWBRUrTTq-hxkKLGEO5FujmNhDoUsH/view) for more information
+
 ## Use Cases
 
 1. **Designer uploads a sketch**
@@ -48,10 +50,3 @@ Tests include:
 * Creating new sketch tokens
 * Listing all sketch's
 * transfer sketch's
-
-Run the app on a dev server locally for testing/grading
-1. You should be able to visit a URL and interact with the application
-2. App recognizes current account
-3. Sign transactions using MetaMask or uPort
-4. Contract state is updated
-5. Update reflected in U

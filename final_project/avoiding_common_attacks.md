@@ -1,2 +1,9 @@
-measures you took to ensure that your contracts are not susceptible to common attacks. (Module 9 Lesson 3)
-Explain what measures you’ve taken to ensure that your contracts are not susceptible to common attacks
+# Avoiding Common Attacks
+
+## Re-Entracy Attacks
+
+All work is done internally before it is sent externally
+
+## Denial of Service with Failed Call
+
+A `sketch_Exists` boolean mapping to record when a sketch is issued prevents a revert if a sketch with the same hash is ever minted in the future
