@@ -5,3 +5,6 @@
   border-radius: 50%;
   display: inline-block;
 }
+.ui#content {
+  padding-top: 55px;
+}

@@ -1,0 +1,3 @@
+Contract address:
+network: rinkeby
+truffle migration script: truffle migrate -f 3 --network rinkeby --reset

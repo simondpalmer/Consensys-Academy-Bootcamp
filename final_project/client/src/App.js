@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { MetaMaskButton } from "rimble-ui";
 import Web3 from 'web3'
 import './App.css';
 import ipfs from './ipfs'
@@ -25,6 +24,15 @@ class App extends Component {
     }
   }
 
+  async refreshPage(){
+    window.location.reload();
+  }
+  async refreshAccount(){
+    window.ethereum.on("accountChanged", function (accounts){
+      this.setState({account: accounts[0]})
+    })
+  }
+
   async loadBlockchainData() {
     const web3 = window.web3
     // Load account
@@ -41,6 +49,10 @@ class App extends Component {
       this.setState({ contract })
       const totalSupply = await contract.methods.totalSupply().call()
       this.setState({ totalSupply })
+      const accountSupply = await contract.methods.balanceOf(accounts[0]).call()
+      this.setState({ accountSupply })
+      console.log({ accountSupply })
+      console.log({ totalSupply })     
       // Load Sketchs
       for (var i = 1; i <= totalSupply; i++) {
         const sketch = await contract.methods.sketchs(i - 1).call()
@@ -48,7 +60,19 @@ class App extends Component {
           sketchs: [...this.state.sketchs, sketch]
         })
       }
-    } else {
+      console.log( this.state.sketchs ) 
+      for (var i = 0; i < accountSupply; i++) {
+        const tokenId = await contract.methods.tokenOfOwnerByIndex(accounts[0], i).call()
+        this.setState({
+          accsketchIDs: [...this.state.accsketchIDs, tokenId]
+        })
+      }
+      console.log( this.state.accsketchIDs )
+      const accsketchs = this.state.accsketchIDs.map(i => this.state.sketchs[i])
+      this.setState({ accsketchs })
+      console.log( this.state.accsketchs )
+    }
+    else {
       window.alert('Smart contract not deployed to detected network.')
     }
   }
@@ -60,6 +84,12 @@ class App extends Component {
       })
     })
   }
+  transfer = (tokenID, toAccount) => {
+    this.state.contract.methods.transfersketch(toAccount, tokenID).send({ from: this.state.account })
+    .once('receipt', (receipt) => { this.refreshPage() })
+  }
+
+
   
 
   constructor(props) {
@@ -68,8 +98,13 @@ class App extends Component {
       account: '',
       buffer: null,
       contract: null,
+      tokenID: 0,
+      toAccount: null,
+      accountSupply: 0,
       totalSupply: 0,
-      sketchs: []
+      sketchs: [],
+      accsketchs: [],
+      accsketchIDs: []
     }
   }
 
@@ -98,47 +133,20 @@ class App extends Component {
         return
     })
   }
-
-  runMetamask = (event) => {
-    let currentAccount = null;
-window.ethereum
-  .request({ method: 'eth_accounts' })
-  .then(handleAccountsChanged)
-  .catch((err) => {
-    // Some unexpected error.
-    // For backwards compatibility reasons, if no accounts are available,
-    // eth_accounts will return an empty array.
-    console.error(err);
-  });
-    document.getElementById('connectButton', connect);
-    window.ethereum.on('accountsChanged', handleAccountsChanged);
-
-// For now, 'eth_accounts' will continue to always return an array
-function handleAccountsChanged(accounts) {
-  if (accounts.length === 0) {
-    // MetaMask is locked or the user has not connected any accounts
-    console.log('Please connect to MetaMask.');
-  } else if (accounts[0] !== currentAccount) {
-    currentAccount = accounts[0];
-    // Do any other work!
+  handleIDInput = event => {
+    this.setState({ tokenID: event.target.value})
   }
-}
-    function connect() {
-      window.ethereum
-        .request({ method: 'eth_requestAccounts' })
-        .then(handleAccountsChanged)
-        .catch((err) => {
-          if (err.code === 4001) {
-            // EIP-1193 userRejectedRequest error
-            // If this happens, the user rejected the connection request.
-            console.log('Please connect to MetaMask.');
-          } else {
-            console.error(err);
-          }
-        });
-    }
-}
+  handleContractInput = event => {
+    this.setState({ toAccount: event.target.value})
+  }
 
+  onTransfer = (event) =>{
+    event.preventDefault()
+    console.log("Transfering the sketch...")
+    const token = this.state.tokenID
+    const toAccount = this.state.toAccount
+    this.transfer(token,toAccount)
+  }
 
 
   render() {
@@ -147,43 +155,50 @@ function handleAccountsChanged(accounts) {
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
+            href="#"
             target="_blank"
-            rel="noopener noreferrer"
-          >
-            Sketchs
+            rel="noopener noreferrer">
+            Design Co-Lab
           </a>
           <ul className="navbar-nav px-3">
-          <MetaMaskButton onClick={this.runMetamask}>
-            Connect with MetaMask
-            </MetaMaskButton>
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-              <small className="text-white"><span id="account">{this.state.account}</span></small>
+              <small className="text-white"><span id="totalSupply">{"Total number of sketch's: " + this.state.totalSupply}</span></small>
+            </li>
+            <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
+              <small className="text-white"><span id="account">{'Current user: ' + this.state.account}</span></small>
+            </li>
+            <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
+              <small className="text-white"><span id="accountSupply">{"Number of sketch's owned by current user: " + this.state.accountSupply}</span></small>
             </li>
           </ul>
         </nav>
         <div className="container-fluid mt-5">
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
-              <div className="content mr-auto ml-auto">
-                <h1>Submit Sketch For Review</h1>
+              <div className="content mr-auto ml-auto mt-5">
+                <h2>Upload Sketch</h2>
                 <form onSubmit={this.onSubmit}>                  
                   <input type='file' onChange={this.captureFile} />
                   <input type='submit'
-                  ref={(input) => { this.sketch = input }}
-                  />
+                  ref={(input) => { this.sketch = input }}/>
                 </form>
+                <h2>Transfer Sketch</h2>
+                  <button onClick={this.onTransfer}>Transfer</button>
+                  <input onChange={this.handleIDInput} placeholder="Enter tokenId"/>
+                  <input onChange={this.handleContractInput} placeholder="Enter address"/>
               </div>
             </main>
           </div>
           <hr/>
           <div className="row text-center">
-            { this.state.sketchs.map((sketch, key) => {
+            { this.state.accsketchs.map((sketch, key) => {
               return(
                 <div key={key} className="col-md-3 mb-3">
                   <div className="token"> 
                     <img src={ 'https://ipfs.infura.io/ipfs/' + sketch }></img>
                   </div>
-                  <div>{sketch}</div>
+                  <div className ="mr-auto ml-auto row mt-5"><h6>{"ipfs hash: " + sketch}</h6>
+                  </div>
                 </div>
               )
             })}
