@@ -344,15 +344,15 @@
     "absolutePath": "@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
     "exportedSymbols": {
       "IERC721Metadata": [
-        1488
+        1523
       ]
     },
-    "id": 1489,
+    "id": 1524,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1463,
+        "id": 1498,
         "literals": [
           "solidity",
           "^",
@@ -365,10 +365,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
         "file": "./IERC721.sol",
-        "id": 1464,
+        "id": 1499,
         "nodeType": "ImportDirective",
-        "scope": 1489,
-        "sourceUnit": 1431,
+        "scope": 1524,
+        "sourceUnit": 1466,
         "src": "58:23:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -380,38 +380,38 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1466,
+              "id": 1501,
               "name": "IERC721",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1430,
+              "referencedDeclaration": 1465,
               "src": "246:7:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC721_$1430",
+                "typeIdentifier": "t_contract$_IERC721_$1465",
                 "typeString": "contract IERC721"
               }
             },
-            "id": 1467,
+            "id": 1502,
             "nodeType": "InheritanceSpecifier",
             "src": "246:7:9"
           }
         ],
         "contractDependencies": [
-          187,
-          1430
+          222,
+          1465
         ],
         "contractKind": "interface",
         "documentation": {
-          "id": 1465,
+          "id": 1500,
           "nodeType": "StructuredDocumentation",
           "src": "83:133:9",
           "text": " @title ERC-721 Non-Fungible Token Standard, optional metadata extension\n @dev See https://eips.ethereum.org/EIPS/eip-721"
         },
         "fullyImplemented": false,
-        "id": 1488,
+        "id": 1523,
         "linearizedBaseContracts": [
-          1488,
-          1430,
-          187
+          1523,
+          1465,
+          222
         ],
         "name": "IERC721Metadata",
         "nodeType": "ContractDefinition",
@@ -419,13 +419,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1468,
+              "id": 1503,
               "nodeType": "StructuredDocumentation",
               "src": "261:58:9",
               "text": " @dev Returns the token collection name."
             },
             "functionSelector": "06fdde03",
-            "id": 1473,
+            "id": 1508,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -433,23 +433,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1469,
+              "id": 1504,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "337:2:9"
             },
             "returnParameters": {
-              "id": 1472,
+              "id": 1507,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1471,
+                  "id": 1506,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1473,
+                  "scope": 1508,
                   "src": "363:13:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -458,7 +458,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1470,
+                    "id": 1505,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "363:6:9",
@@ -473,7 +473,7 @@
               ],
               "src": "362:15:9"
             },
-            "scope": 1488,
+            "scope": 1523,
             "src": "324:54:9",
             "stateMutability": "view",
             "virtual": false,
@@ -482,13 +482,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1474,
+              "id": 1509,
               "nodeType": "StructuredDocumentation",
               "src": "384:60:9",
               "text": " @dev Returns the token collection symbol."
             },
             "functionSelector": "95d89b41",
-            "id": 1479,
+            "id": 1514,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -496,23 +496,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1475,
+              "id": 1510,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "464:2:9"
             },
             "returnParameters": {
-              "id": 1478,
+              "id": 1513,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1477,
+                  "id": 1512,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1479,
+                  "scope": 1514,
                   "src": "490:13:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -521,7 +521,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1476,
+                    "id": 1511,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "490:6:9",
@@ -536,7 +536,7 @@
               ],
               "src": "489:15:9"
             },
-            "scope": 1488,
+            "scope": 1523,
             "src": "449:56:9",
             "stateMutability": "view",
             "virtual": false,
@@ -545,13 +545,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1480,
+              "id": 1515,
               "nodeType": "StructuredDocumentation",
               "src": "511:90:9",
               "text": " @dev Returns the Uniform Resource Identifier (URI) for `tokenId` token."
             },
             "functionSelector": "c87b56dd",
-            "id": 1487,
+            "id": 1522,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -559,17 +559,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1483,
+              "id": 1518,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1482,
+                  "id": 1517,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1487,
+                  "scope": 1522,
                   "src": "624:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -578,7 +578,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1481,
+                    "id": 1516,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "624:7:9",
@@ -594,17 +594,17 @@
               "src": "623:17:9"
             },
             "returnParameters": {
-              "id": 1486,
+              "id": 1521,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1485,
+                  "id": 1520,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1487,
+                  "scope": 1522,
                   "src": "664:13:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -613,7 +613,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1484,
+                    "id": 1519,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "664:6:9",
@@ -628,14 +628,14 @@
               ],
               "src": "663:15:9"
             },
-            "scope": 1488,
+            "scope": 1523,
             "src": "606:73:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1489,
+        "scope": 1524,
         "src": "217:464:9"
       }
     ],
@@ -645,15 +645,15 @@
     "absolutePath": "@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol",
     "exportedSymbols": {
       "IERC721Metadata": [
-        1488
+        1523
       ]
     },
-    "id": 1489,
+    "id": 1524,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1463,
+        "id": 1498,
         "literals": [
           "solidity",
           "^",
@@ -666,10 +666,10 @@
       {
         "absolutePath": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
         "file": "./IERC721.sol",
-        "id": 1464,
+        "id": 1499,
         "nodeType": "ImportDirective",
-        "scope": 1489,
-        "sourceUnit": 1431,
+        "scope": 1524,
+        "sourceUnit": 1466,
         "src": "58:23:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -681,38 +681,38 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 1466,
+              "id": 1501,
               "name": "IERC721",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1430,
+              "referencedDeclaration": 1465,
               "src": "246:7:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC721_$1430",
+                "typeIdentifier": "t_contract$_IERC721_$1465",
                 "typeString": "contract IERC721"
               }
             },
-            "id": 1467,
+            "id": 1502,
             "nodeType": "InheritanceSpecifier",
             "src": "246:7:9"
           }
         ],
         "contractDependencies": [
-          187,
-          1430
+          222,
+          1465
         ],
         "contractKind": "interface",
         "documentation": {
-          "id": 1465,
+          "id": 1500,
           "nodeType": "StructuredDocumentation",
           "src": "83:133:9",
           "text": " @title ERC-721 Non-Fungible Token Standard, optional metadata extension\n @dev See https://eips.ethereum.org/EIPS/eip-721"
         },
         "fullyImplemented": false,
-        "id": 1488,
+        "id": 1523,
         "linearizedBaseContracts": [
-          1488,
-          1430,
-          187
+          1523,
+          1465,
+          222
         ],
         "name": "IERC721Metadata",
         "nodeType": "ContractDefinition",
@@ -720,13 +720,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1468,
+              "id": 1503,
               "nodeType": "StructuredDocumentation",
               "src": "261:58:9",
               "text": " @dev Returns the token collection name."
             },
             "functionSelector": "06fdde03",
-            "id": 1473,
+            "id": 1508,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -734,23 +734,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1469,
+              "id": 1504,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "337:2:9"
             },
             "returnParameters": {
-              "id": 1472,
+              "id": 1507,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1471,
+                  "id": 1506,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1473,
+                  "scope": 1508,
                   "src": "363:13:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -759,7 +759,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1470,
+                    "id": 1505,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "363:6:9",
@@ -774,7 +774,7 @@
               ],
               "src": "362:15:9"
             },
-            "scope": 1488,
+            "scope": 1523,
             "src": "324:54:9",
             "stateMutability": "view",
             "virtual": false,
@@ -783,13 +783,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1474,
+              "id": 1509,
               "nodeType": "StructuredDocumentation",
               "src": "384:60:9",
               "text": " @dev Returns the token collection symbol."
             },
             "functionSelector": "95d89b41",
-            "id": 1479,
+            "id": 1514,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -797,23 +797,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1475,
+              "id": 1510,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "464:2:9"
             },
             "returnParameters": {
-              "id": 1478,
+              "id": 1513,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1477,
+                  "id": 1512,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1479,
+                  "scope": 1514,
                   "src": "490:13:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -822,7 +822,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1476,
+                    "id": 1511,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "490:6:9",
@@ -837,7 +837,7 @@
               ],
               "src": "489:15:9"
             },
-            "scope": 1488,
+            "scope": 1523,
             "src": "449:56:9",
             "stateMutability": "view",
             "virtual": false,
@@ -846,13 +846,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 1480,
+              "id": 1515,
               "nodeType": "StructuredDocumentation",
               "src": "511:90:9",
               "text": " @dev Returns the Uniform Resource Identifier (URI) for `tokenId` token."
             },
             "functionSelector": "c87b56dd",
-            "id": 1487,
+            "id": 1522,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -860,17 +860,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 1483,
+              "id": 1518,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1482,
+                  "id": 1517,
                   "mutability": "mutable",
                   "name": "tokenId",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1487,
+                  "scope": 1522,
                   "src": "624:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -879,7 +879,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1481,
+                    "id": 1516,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "624:7:9",
@@ -895,17 +895,17 @@
               "src": "623:17:9"
             },
             "returnParameters": {
-              "id": 1486,
+              "id": 1521,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1485,
+                  "id": 1520,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 1487,
+                  "scope": 1522,
                   "src": "664:13:9",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -914,7 +914,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 1484,
+                    "id": 1519,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "664:6:9",
@@ -929,14 +929,14 @@
               ],
               "src": "663:15:9"
             },
-            "scope": 1488,
+            "scope": 1523,
             "src": "606:73:9",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1489,
+        "scope": 1524,
         "src": "217:464:9"
       }
     ],
@@ -948,7 +948,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.1",
-  "updatedAt": "2020-11-01T23:27:57.877Z",
+  "updatedAt": "2020-11-29T21:44:26.329Z",
   "devdoc": {
     "details": "See https://eips.ethereum.org/EIPS/eip-721",
     "kind": "dev",
