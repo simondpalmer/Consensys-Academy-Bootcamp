@@ -1,8 +1,8 @@
 # Design Co-Lab Dapp
-A Dapp that allows architects and designers alike to upload designs onto ipfs. These are tokenized in the process onto the blockchain.
+A Dapp that allows architects and designers alike to upload sketch's onto a design collaboration platform powered by ipfs, a peer-to-peer network for storing and sharing data. These are tokenized in the process onto the blockchain so to record the transfer of value between designers and potentially reward them in the process with Eth.
 Dependant on the user the Dapp shows all of the sketchs that have been uploaded by that user. 
 
-Watch the [demo](https://drive.google.com/file/d/1SdYWBRUrTTq-hxkKLGEO5FujmNhDoUsH/view) for more information
+Watch the [demo](https://drive.google.com/file/d/1h4yIzMi5Uli09VaN3LobPHmqFQmqB-ut/view) for more information
 
 ## Use Cases
 
@@ -49,4 +49,4 @@ Tests include:
 * It has a symbol
 * Creating new sketch tokens
 * Listing all sketch's
-* transfer sketch's
+* transfer sketch's to another designer
