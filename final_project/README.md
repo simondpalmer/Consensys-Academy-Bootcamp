@@ -4,6 +4,37 @@ Dependant on the user the Dapp shows all of the sketchs that have been uploaded 
 
 Watch the [demo](https://drive.google.com/file/d/1h4yIzMi5Uli09VaN3LobPHmqFQmqB-ut/view) for more information
 
+## Environment Setup
+
+**The project is developed using different technologies**
+
+- node.js
+- React
+- solidity
+- ganache-cli
+- metamask
+- truffle
+- IPFS
+
+**Dependancies**
+
+- npm
+- truffle
+- Ganache-cli
+- Chrome
+- MetaMask
+
+## To Deploy
+
+1. Clone repo into local directory
+2. Run `ganache-cli`
+2. Seperate terminal go to `finalproject` directory
+3. run `truffle migrate --network development --reset` to migrate the contract onto truffle
+4. Seperate terminal go to `finalproject/client`
+5. run `npm start` to start the application
+6. Chrome browser will open on `http://localhost:3000/` with MetaMaskrequesting you to log-in with password
+7. Happy collaborating!
+
 ## Use Cases
 
 1. **Designer uploads a sketch**
@@ -28,18 +59,6 @@ Watch the [demo](https://drive.google.com/file/d/1h4yIzMi5Uli09VaN3LobPHmqFQmqB-
 4. **Designer wants to check number of their own sketch's**
 
 - number of designers sketch's shown in navigation bar
-
-## Development Tools
-
-the project is developed using different technologies.
-
-- node.js
-- React
-- solidity
-- ganache-cli
-- metamask
-- truffle
-- IPFS
 
 ## Tests
 Tests include:

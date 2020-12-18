@@ -2,12 +2,13 @@
 pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 /// @title A contract to upload sketch's and transfer sketch's on ipfs for designers to collaborate 
 /// @author Simon Palmer
 /// @notice This contract inherits from the ERC721 standard
 /// @dev All function calls are currenlty implemented without side effects
-contract Sketch is ERC721{
+contract Sketch is ERC721, Ownable{
   address payable private admin;
   string[] public sketchs;
   mapping(string => bool) _sketchExists;
@@ -33,7 +34,7 @@ contract Sketch is ERC721{
   }
 
   /// @notice way to wipe clean contract
-  function close() public { 
+  function close() public onlyOwner { 
     selfdestruct(admin);
     }
 }

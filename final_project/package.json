@@ -1,0 +1,28 @@
+{
+  "name": "final_project",
+  "version": "1.0.0",
+  "description": "A Dapp that allows architects and designers alike to upload sketch's onto a design collaboration platform powered by ipfs, a peer-to-peer network for storing and sharing data. These are tokenized in the process onto the blockchain so to record the transfer of value between designers and potentially reward them in the process with Eth. Dependant on the user the Dapp shows all of the sketchs that have been uploaded by that user.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "react-navbar": "^3.0.0",
+    "rimble-ui": "^0.14.0",
+    "styled-components": "^5.2.1",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "bootstrap": "^4.5.3",
+    "ipfs-api": "^26.1.2",
+    "ipfs-http-client": "^48.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
