@@ -18,22 +18,24 @@ Watch the [demo](https://drive.google.com/file/d/1h4yIzMi5Uli09VaN3LobPHmqFQmqB-
 
 **Dependancies**
 
-- npm
-- truffle
+- node v10.19
+- truffle v5.1.5
+- Solidity ^0.6.0
 - Ganache-cli
 - Chrome
 - MetaMask
 
 ## To Deploy
 
-1. Clone repo into local directory
+1. Clone git repo into a local directory
 2. Run `ganache-cli`
-2. Seperate terminal go to `finalproject` directory
-3. run `truffle migrate --network development --reset` to migrate the contract onto truffle
-4. Seperate terminal go to `finalproject/client`
-5. run `npm start` to start the application
-6. Chrome browser will open on `http://localhost:3000/` with MetaMaskrequesting you to log-in with password
-7. Happy collaborating!
+3. In a seperate terminal go to `finalproject` directory
+4. Run `truffle migrate --network development --reset` to migrate the contract onto truffle
+5. Open Chrome and if you haven't already done so, create a custom RPC network on MetaMask and point it to `http://localhost:8545` 
+6. In a seperate terminal go to `finalproject/client`
+7. Run `npm start` to start the application
+8. Chrome browser will open on `http://localhost:3000/` with MetaMask requesting you to log-in with your password
+9. Happy collaborating!
 
 ## Use Cases
 
